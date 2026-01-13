@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="theme-color" content="#000000" />
+  <title>Mood Tracker</title>
+  <link rel="manifest" href="manifest.json" />
+  <link rel="icon" href="icon-512.png" />
+  <style>
+    body { margin: 0; padding: 0; background: black; color: white; font-family: -apple-system, BlinkMacSystemFont, sans-serif; overflow: hidden; }
+    #root { height: 100vh; }
+  </style>
+</head>
+<body>
+  <div id="root"></div>
+
+  <!-- React & ReactDOM from CDN -->
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+
+  <!-- Lucide icons from CDN -->
+  <script src="https://unpkg.com/lucide-react@latest/dist/umd/lucide-react.min.js"></script>
+
+  <!-- Your MoodTrackerApp code goes here - we'll add it next -->
+  <script type="text/babel">
+    // Placeholder for now - full code coming in next step
+    const App = () => React.createElement('div', {style:{textAlign:'center', padding:'20px'}}, 
+      React.createElement('h1', null, 'Mood Tracker Ready!'),
+      React.createElement('p', null, 'Paste the big React code here soon...')
+    );
+
+    ReactDOM.createRoot(document.getElementById('root')).render(React.createElement(App));
+  </script>
+
+  <!-- Service worker for offline use -->
+  <script>
+    if ('serviceWorker' in navigator) {
+      window.addEventListener('load', function() {
+        navigator.serviceWorker.register('sw.js').then(function(reg) {
+          console.log('Service Worker registered!', reg);
+        }).catch(function(err) {
+          console.log('Service Worker failed', err);
+        });
+      });
+    }
+  </script>
+</body>
+</html>
